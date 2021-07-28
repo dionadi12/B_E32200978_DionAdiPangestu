@@ -106,11 +106,11 @@ class ProductController extends Controller
         }
     }
 
-    public function edit(product $product)
+    public function edit($id)
     {
         $product = Product::find($id); //AMBIL DATA PRODUK TERKAIT BERDASARKAN ID
         $category = Category::orderBy('name', 'DESC')->get(); //AMBIL SEMUA DATA KATEGORI
-        return view('product.edit', compact('product', 'category')); //LOAD VIEW DAN PASSING DATANYA KE VIEW
+        return view('produk.edit', compact('product', 'category')); //LOAD VIEW DAN PASSING DATANYA KE VIEW
     }
 
     public function update(Request $request, $id)

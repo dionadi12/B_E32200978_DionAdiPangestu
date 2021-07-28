@@ -45,9 +45,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('auth/product', [ProductController::class, 'index'])->name('product.index');
     Route::get('create/product', [ProductController::class, 'create'])->name('product.create');
     Route::post('create/product', [ProductController::class, 'store'])->name('product.store');
-    Route::get('product/{product_id}/edit', [ProductController::class, 'edit'])->name('product.edit');
-    Route::put('product/{product_id}', [ProductController::class, 'update'])->name('product.update');
-    Route::delete('product/{product_id}', [ProductController::class, 'destroy'])->name('product.destroy');
+    Route::get('product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('product/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::delete('product/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 
     Route::get('product/bulk', [ProductController::class, 'massUploadForm'])->name('product.bulk');
     Route::post('product/bulk', [ProductController::class, 'massUpload'])->name('product.saveBulk');
@@ -55,9 +55,9 @@ Route::group(['middleware' => ['auth']], function () {
     /* route kategori */
     Route::get('kategori', [CategoryController::class, 'index'])->name('category.index');
     Route::post('kategori', [CategoryController::class, 'store'])->name('category.store');
-    Route::get('kategori/{category_id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
-    Route::put('kategori/{category_id}', [CategoryController::class, 'update'])->name('category.update');
-    Route::delete('kategori/{category_id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+    Route::get('kategori/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::put('kategori/{id}', [CategoryController::class, 'update'])->name('category.update');
+    Route::delete('kategori/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
 
     /* Order */
     Route::get('order/index', [OrderController::class, 'index'])->name('order.index');
